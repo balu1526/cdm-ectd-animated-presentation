@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CDM → BA/BE → eCTD | Interactive Regulatory Story</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#050a10;color:#eef7ff;font-family:Inter,Segoe UI,Arial,sans-serif}
+.reveal{background:radial-gradient(circle at 78% 12%,#123149 0,#07121b 38%,#03070b 78%)}
+.reveal .slides{text-align:left}.reveal section{height:100%}
+h1,h2,h3{color:#f4fbff;letter-spacing:-.045em}.reveal h1{font-size:2.25em}.reveal h2{font-size:1.55em}
+.k{font-size:.46em;letter-spacing:.25em;text-transform:uppercase;color:#49dcff;font-weight:800}
+.sub{font-size:.54em;line-height:1.55;color:#9db1c0;max-width:900px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:25px}
+.card{background:linear-gradient(145deg,rgba(18,42,58,.88),rgba(7,16,24,.82));border:1px solid rgba(100,205,240,.18);border-radius:20px;padding:22px;box-shadow:0 18px 50px #0006;backdrop-filter:blur(8px)}
+.card b{font-size:.62em;display:block;margin-bottom:9px}.card p,.card span{font-size:.46em;color:#99adba;line-height:1.5}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:30px}.node{font-size:.47em;padding:14px 17px;border:1px solid #36c9ef66;background:#0b202d;border-radius:13px;box-shadow:0 0 25px #21c7ff12}.arr{color:#4ddfff;font-size:.7em}
+.badge{display:inline-block;padding:7px 11px;border-radius:999px;background:#15384a;color:#6ce6ff;font-size:.42em;margin:4px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:25px}.metric{padding:18px;border-radius:16px;background:#0a1721;border:1px solid #ffffff12}.metric strong{font-size:1.1em;color:#53defe}.metric small{display:block;color:#8297a6;font-size:.42em;margin-top:6px}
+.graph{height:300px;position:relative;background:linear-gradient(180deg,#091722,#061019);border:1px solid #ffffff14;border-radius:20px;overflow:hidden;margin-top:20px}
+svg{width:100%;height:100%}.curve{fill:none;stroke:#4bdfff;stroke-width:4;filter:drop-shadow(0 0 7px #4bdfff88);stroke-dasharray:900;stroke-dashoffset:900;animation:draw 3s ease forwards 1s}.gridline{stroke:#ffffff10}.point{fill:#fff;stroke:#4bdfff;stroke-width:3;filter:drop-shadow(0 0 8px #4bdfff)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.orbit{height:250px;width:250px;border:1px solid #43ddff55;border-radius:50%;margin:auto;position:relative;animation:spin 14s linear infinite}.orbit:before{content:"eCTD";position:absolute;inset:73px;border-radius:50%;background:#102d3c;display:grid;place-items:center;color:#55e0ff;font-weight:900;font-size:1.3em;box-shadow:0 0 45px #32cfff33}.orb{position:absolute;width:12px;height:12px;border-radius:50%;background:#59e4ff;top:-6px;left:calc(50% - 6px);box-shadow:0 0 20px #59e4ff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.modules{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:30px}.mod{min-height:170px;padding:17px;border-radius:14px;background:#091721;border-top:3px solid #48dcff}.mod b{font-size:.52em}.mod p{font-size:.4em;color:#91a6b4;line-height:1.4}
+.ring{width:260px;height:260px;border-radius:50%;border:18px solid #15303e;border-top-color:#49dcff;border-right-color:#8b7cff;animation:spin 5s linear infinite;margin:auto}.center{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:.8em}
+.footer{position:fixed;bottom:15px;left:25px;color:#617a89;font-size:10px;z-index:10}.hint{position:fixed;right:25px;bottom:15px;color:#617a89;font-size:10px;z-index:10}
+@media(max-width:850px){.grid,.grid2,.metrics,.modules{grid-template-columns:1fr 1fr}.reveal h1{font-size:1.8em}.graph{height:240px}}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<section data-transition="zoom">
+<div class="k">Clinical Data Management • BA/BE • Regulatory Operations</div>
+<h1>Data becomes evidence.<br><span style="color:#4ddfff">Evidence becomes submission.</span></h1>
+<p class="sub">An interactive visual story showing the controlled journey from clinical observations through analysis and into an eCTD-ready regulatory package.</p>
+<div class="flow"><div class="node">SOURCE</div><div class="arr">→</div><div class="node">CDM</div><div class="arr">→</div><div class="node">VALIDATE</div><div class="arr">→</div><div class="node">PK / STATISTICS</div><div class="arr">→</div><div class="node">eCTD</div></div>
+</section>
+
+<section data-transition="slide">
+<div class="k">01 / Why this matters</div><h2>A submission is only as credible as its evidence chain.</h2>
+<div class="grid">
+<div class="card fragment"><b>01 — Control</b><span>Standardize collection, cleaning, coding, reconciliation and review.</span></div>
+<div class="card fragment"><b>02 — Trace</b><span>Maintain a defensible path from source observations to derived outputs.</span></div>
+<div class="card fragment"><b>03 — Communicate</b><span>Package the resulting evidence in a structure a regulator can navigate.</span></div>
+</div>
+</section>
+
+<section data-transition="convex">
+<div class="k">02 / Clinical Data Management</div><h2>The control tower</h2>
+<div class="grid2">
+<div><p class="sub">CDM sits between collection and analysis. Its job is not simply to make a dataset look clean; it is to make the data controlled, reviewable and fit for downstream use.</p>
+<div><span class="badge">EDC</span><span class="badge">Labs</span><span class="badge">PK</span><span class="badge">Queries</span><span class="badge">Coding</span><span class="badge">Reconciliation</span></div></div>
+<div class="card fragment"><b>Gate logic</b><p>Collected → reviewed → cleaned → reconciled → frozen → released.</p><div class="flow"><div class="node">OPEN</div><div class="arr">→</div><div class="node">QC</div><div class="arr">→</div><div class="node">LOCK</div></div></div>
+</div>
+</section>
+
+<section data-transition="fade">
+<div class="k">03 / BA/BE analytical layer</div><h2>Concentration over time becomes a PK profile.</h2>
+<div class="graph">
+<svg viewBox="0 0 1000 320" preserveAspectRatio="none">
+<g class="gridline"><line x1="70" y1="50" x2="950" y2="50"/><line x1="70" y1="125" x2="950" y2="125"/><line x1="70" y1="200" x2="950" y2="200"/><line x1="70" y1="275" x2="950" y2="275"/><line x1="70" y1="25" x2="70" y2="285"/><line x1="290" y1="25" x2="290" y2="285"/><line x1="510" y1="25" x2="510" y2="285"/><line x1="730" y1="25" x2="730" y2="285"/><line x1="950" y1="25" x2="950" y2="285"/></g>
+<path class="curve" d="M70 280 C145 275 185 240 245 135 C285 70 345 62 405 105 C480 158 515 195 600 218 C700 242 815 260 950 272"/>
+<circle class="point" cx="345" cy="62" r="7"/><text x="365" y="55" fill="#9fefff" font-size="18">Cmax</text>
+<line x1="245" y1="135" x2="245" y2="285" stroke="#49dcff55" stroke-dasharray="5 5"/><text x="225" y="305" fill="#718896" font-size="16">Tmax</text>
+</svg></div>
+<div class="metrics"><div class="metric"><strong>Cmax</strong><small>Peak observed concentration</small></div><div class="metric"><strong>AUC</strong><small>Exposure measure</small></div><div class="metric"><strong>Tmax</strong><small>Time to peak</small></div><div class="metric"><strong>t½</strong><small>Terminal half-life</small></div></div>
+</section>
+
+<section data-transition="zoom">
+<div class="k">04 / Statistical evidence</div><h2>Compare exposure—not just numbers.</h2>
+<div class="grid2">
+<div class="card"><b>Typical BA/BE flow</b><p>Validated PK parameters → log transformation where required → statistical model → geometric mean comparison → confidence interval interpretation.</p></div>
+<div class="card"><b>Decision layer</b><p>The analysis output should remain traceable to the controlled dataset and documented analysis specifications. Exact regulatory acceptance criteria depend on the applicable study and jurisdiction.</p></div>
+</div>
+<div class="flow fragment"><div class="node">PK PARAMETERS</div><div class="arr">→</div><div class="node">LOG SCALE</div><div class="arr">→</div><div class="node">MODEL</div><div class="arr">→</div><div class="node">CI</div><div class="arr">→</div><div class="node">CONCLUSION</div></div>
+</section>
+
+<section data-transition="convex">
+<div class="k">05 / eCTD architecture</div><h2>One submission. Five modules.</h2>
+<div class="modules">
+<div class="mod"><b>Module 1</b><p>Regional administrative information.</p></div>
+<div class="mod"><b>Module 2</b><p>Summaries and overviews.</p></div>
+<div class="mod"><b>Module 3</b><p>Quality / CMC information.</p></div>
+<div class="mod"><b>Module 4</b><p>Nonclinical study reports.</p></div>
+<div class="mod"><b>Module 5</b><p>Clinical study reports and related clinical documentation.</p></div>
+</div>
+<div class="grid2">
+<div class="card fragment"><b>Lifecycle thinking</b><p>eCTD is not just a folder tree. Submission sequences and lifecycle operations govern how content is submitted and maintained.</p></div>
+<div><div class="orbit"><div class="orb"></div></div></div>
+</div>
+</section>
+
+<section data-transition="slide">
+<div class="k">06 / Traceability</div><h2>Follow the evidence backwards.</h2>
+<div class="flow"><div class="node">REGULATORY OUTPUT</div><div class="arr">←</div><div class="node">REPORT</div><div class="arr">←</div><div class="node">ANALYSIS</div><div class="arr">←</div><div class="node">DERIVED DATA</div><div class="arr">←</div><div class="node">SOURCE</div></div>
+<div class="grid">
+<div class="card fragment"><b>Question</b><span>Where did this value come from?</span></div>
+<div class="card fragment"><b>Question</b><span>Which transformation produced it?</span></div>
+<div class="card fragment"><b>Question</b><span>Which controlled artifact contains the evidence?</span></div>
+</div>
+</section>
+
+<section data-transition="zoom">
+<div class="k">07 / The operating model</div><h2>Separate the gates. Connect the evidence.</h2>
+<div class="grid">
+<div class="card fragment"><b>GATE A — DATA</b><span>Quality checks, queries, coding, reconciliation and review.</span></div>
+<div class="card fragment"><b>GATE B — ANALYSIS</b><span>Controlled specifications, derivations, PK/statistical outputs and QC.</span></div>
+<div class="card fragment"><b>GATE C — SUBMISSION</b><span>Document control, eCTD structure, lifecycle and technical validation.</span></div>
+</div>
+</section>
+
+<section data-transition="fade">
+<div class="k">08 / Final</div>
+<h1>Control the data.<br>Trace the evidence.<br><span style="color:#4ddfff">Build the submission.</span></h1>
+<p class="sub">The strongest regulatory workflow is not the one with the most animation. It is the one where every visual, table, parameter and document can be traced to controlled evidence.</p>
+<div class="flow"><div class="node">CDM</div><div class="arr">+</div><div class="node">BA/BE ANALYSIS</div><div class="arr">+</div><div class="node">DOCUMENT CONTROL</div><div class="arr">=</div><div class="node">REGULATORY EVIDENCE</div></div>
+</section>
+
+</div></div>
+<div class="footer">CDM → BA/BE → Analysis → eCTD</div><div class="hint">← → navigate • F fullscreen • Esc overview</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({hash:true,controls:true,progress:true,center:false,width:1400,height:800,margin:.06,transition:'slide',backgroundTransition:'fade'});
+</script>
+</body></html>
